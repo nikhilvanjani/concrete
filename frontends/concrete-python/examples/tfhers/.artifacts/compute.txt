@@ -1,0 +1,27 @@
+def compute(tfhers_x, tfhers_y, aa_0):
+    ####### TFHE-rs to Concrete #########
+
+    # x and y are supposed to be TFHE-rs values.
+    # to_native will use type information from x and y to do
+    # a correct conversion from TFHE-rs to Concrete
+    concrete_x = tfhers.to_native(tfhers_x)
+    concrete_y = tfhers.to_native(tfhers_y)
+    a_0 = tfhers.to_native(aa_0)
+    # a_1 = tfhers.to_native(aa_1)
+    # a_2 = tfhers.to_native(aa_2)
+    ####### TFHE-rs to Concrete #########
+
+    ####### Concrete Computation ########
+    # concrete_res = (concrete_x + concrete_y) % 213
+    # concrete_res = (a_0 * concrete_x * concrete_x + a_1 * concrete_y * concrete_y + a_2 *concrete_x * concrete_y) % 213
+    # concrete_res = (aa_0 * concrete_x * concrete_x + aa_1 * concrete_y * concrete_y + aa_2 *concrete_x * concrete_y) % 213
+    # concrete_res = (aa_0 *concrete_x * concrete_y) % 213
+    concrete_res = (a_0 *concrete_x * concrete_y) % 213
+    ####### Concrete Computation ########
+
+    ####### Concrete to TFHE-rs #########
+    tfhers_res = tfhers.from_native(
+        concrete_res, tfhers_type
+    )  # we have to specify the type we want to convert to
+    ####### Concrete to TFHE-rs #########
+    return tfhers_res

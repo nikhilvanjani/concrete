@@ -1,0 +1,2 @@
+macOS-13.3.1-arm64-arm-64bit Darwin Kernel Version 22.4.0: Mon Mar  6 21:01:02 PST 2023; root:xnu-8796.101.5~3/RELEASE_ARM64_T8112
+Python 3.10.16

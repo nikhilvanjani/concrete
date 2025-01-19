@@ -1,0 +1,12 @@
+ %0 = tfhers_x                      # EncryptedScalar<tfhers<uint8, 3, 2, params=crypto_params<lwe_dim=909, glwe_dim=1, poly_size=4096, pbs_base_log=15, pbs_level=2, lwe_noise_distribution=1.0994794733558207e-06, glwe_noise_distribution=2.168404344971009e-19, encryption_key_choice=BIG>>>
+ %1 = tfhers_y                      # EncryptedScalar<tfhers<uint8, 3, 2, params=crypto_params<lwe_dim=909, glwe_dim=1, poly_size=4096, pbs_base_log=15, pbs_level=2, lwe_noise_distribution=1.0994794733558207e-06, glwe_noise_distribution=2.168404344971009e-19, encryption_key_choice=BIG>>>
+ %2 = aa_0                          # EncryptedScalar<tfhers<uint8, 3, 2, params=crypto_params<lwe_dim=909, glwe_dim=1, poly_size=4096, pbs_base_log=15, pbs_level=2, lwe_noise_distribution=1.0994794733558207e-06, glwe_noise_distribution=2.168404344971009e-19, encryption_key_choice=BIG>>>
+ %3 = tfhers_to_native(%0)          # EncryptedScalar<uint8>
+ %4 = tfhers_to_native(%1)          # EncryptedScalar<uint8>
+ %5 = tfhers_to_native(%2)          # EncryptedScalar<uint8>
+ %6 = multiply(%5, %3)              # EncryptedScalar<uint1>
+ %7 = multiply(%6, %4)              # EncryptedScalar<uint1>
+ %8 = 213                           # ClearScalar<uint8>
+ %9 = remainder(%7, %8)             # EncryptedScalar<uint1>
+%10 = tfhers_from_native(%9)        # EncryptedScalar<tfhers<uint8, 3, 2, params=crypto_params<lwe_dim=909, glwe_dim=1, poly_size=4096, pbs_base_log=15, pbs_level=2, lwe_noise_distribution=1.0994794733558207e-06, glwe_noise_distribution=2.168404344971009e-19, encryption_key_choice=BIG>>>
+return %10

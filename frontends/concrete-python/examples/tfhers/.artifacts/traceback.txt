@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/compilation/module_compiler.py", line 423, in compile
+    ).convert_many(graphs, mlir_context)
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/mlir/converter.py", line 108, in convert_many
+    def main(*args):
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/mlir/dialects/_func_ops_ext.py", line 187, in decorator
+    return_values = f(*func_args, **func_kwargs)
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/mlir/converter.py", line 130, in main
+    self.node(ctx, node, preds)
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/mlir/converter.py", line 311, in node
+    conversion = converter(ctx, node, preds)
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/mlir/converter.py", line 592, in multiply
+    return ctx.mul(ctx.typeof(node), preds[0], preds[1])
+  File "/Users/nikhilvanjani/Desktop/cmu/phd/fas-from-he/fas-impl-internal/.venv/lib/python3.10/site-packages/concrete/fhe/mlir/context.py", line 2954, in mul
+    assert self.is_bit_width_compatible(x, y)
+AssertionError
